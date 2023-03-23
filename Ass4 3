@@ -1,0 +1,71 @@
+#include <iostream>
+
+#include <cmath>
+
+using namespace std;
+
+bool isPrime(int n) {
+
+    if (n <= 1) {
+
+        return false;
+
+    }
+
+    for (int i = 2; i <= sqrt(n); i++) {
+
+        if (n % i == 0) {
+
+            return false;
+
+        }
+
+    }
+
+    return true;
+
+}
+
+int main() {
+
+    int n, num, primeCount = 0, compositeCount = 0;
+
+    cout << "Enter the number of values: ";
+
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+
+        cout << "Enter number " << i << ": ";
+
+        cin >> num;
+
+        if (isPrime(num)) {
+
+            primeCount++;
+
+        } else {
+
+            compositeCount++;
+
+        }
+
+    }
+
+    cout << "Prime numbers: " << primeCount << endl;
+
+    cout << "Composite numbers: " << compositeCount << endl;
+
+    return 0;
+
+}
+outpot Enter the number of values: 6
+Enter number 1: 33
+Enter number 2: 41
+Enter number 3: 52
+Enter number 4: 61
+Enter number 5: 73
+Enter number 6: 90
+
+Prime numbers: 3
+Composite numbers: 3
