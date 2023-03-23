@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() 
+    char username1[30], username2[30];
+    cout << "Enter the user name: ";
+    cin >> username1;
+    cout << "Reenter the user name: ";
+    cin >> username2;
+    if (strcmp(username1, username2) != 0) {
+        cout << "Usernames do not match." << endl;
+    } else {
+        bool valid = true;
+        for (int i = 0; i < strlen(username1); i++) {
+            if (!isalnum(username1[i]) && username1[i] != '_' && username1[i] != '@') {
+                valid = false;
+                break;
+            }
+        }
+        if (strlen(username1) < 8 || strlen(username1) > 20 || !valid) {
+            cout << "Username is invalid." << endl;
+        } else {
+            cout << "Username is valid." << endl;
+        }
+    }
+
+    return 0;
+    output Username is invalid.
+}
