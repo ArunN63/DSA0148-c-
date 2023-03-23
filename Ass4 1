@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string word;
+    cout << "Enter a word: ";
+    cin >> word;
+    int n = word.length();
+    string reverseWord = "";
+    for (int i = n - 1; i >= 0; i--) {
+        reverseWord += word[i];
+    }
+    cout << "Reverse word: " << reverseWord << endl;
+    return 0;
+}
+output
+
+output
+
+Enter a word: TEMPLE
+Reverse word: ELPMET
